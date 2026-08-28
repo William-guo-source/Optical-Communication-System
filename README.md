@@ -6,7 +6,7 @@
 
 系統分為發射端 (TX) 與接收端 (RX) 兩部分，採用光二極體進行光能與電能之轉換：
 *   **發射端 (TX)：** 負責將類比音訊/數位編碼訊號載入光源。
-    *   實體電路：![TX Board](./BASE/TX_Board.JPG)
+    *   實體電路：<img src="./BASE/TX_Board.JPG" width="500">
     *   電路接線圖：![TX Schematic](./BASE/TX_schematic.png)
 *   **接收端 (RX)：** 核心感測元件使用 **BPW-34** 光二極體 (Photodiode)，搭配 OPA 放大電路擷取微弱的光訊號。
     *   實體電路：![RX Board](./BASE/RX_Board.JPG)
