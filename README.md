@@ -36,8 +36,8 @@
 ### 📈 Demo 3: 模組頻寬量測 (Bandwidth Measurement)
 針對實體焊接的光電收發電路進行極限測試，量測電路的頻率響應與極限頻寬。
 *   **示波器頻寬量測：**<br><img src="./BASE/Demo3_bandwidth.png" width="400">
-*   **LTspice 模擬 TX 頻率響應：**<br><img src="./BASE/TX_freq_resp.png" width="400">
-*   **LTspice 模擬 RX 頻率響應：**<br><img src="./BASE/RX_freq_resp.png" width="400">
+*   **LTspice 模擬 TX 頻率響應：**<br><img src="./BASE/TX_freq_resp.png" width="1000">
+*   **LTspice 模擬 RX 頻率響應：**<br><img src="./BASE/RX_freq_resp.png" width="1000">
 *   **測驗時的整體效能與數據總結：**<br><img src="./BASE/Measure result.png" width="250">
 
 ## 🚀 開發工具 (Tech Stack)
