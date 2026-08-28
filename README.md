@@ -5,39 +5,40 @@
 ## 🔌 硬體電路設計 (Hardware Design)
 
 系統分為發射端 (TX) 與接收端 (RX) 兩部分，採用光二極體進行光能與電能之轉換：
+
 *   **發射端 (TX)：** 負責將類比音訊/數位編碼訊號載入光源。
-    *   實體電路：
-        <img src="./BASE/TX_Board.JPG" width="250">
-    *   電路接線圖：![TX Schematic](./BASE/TX_schematic.png)
+    *   實體電路：<br><img src="./BASE/TX_Board.JPG" width="250">
+    *   電路接線圖：<br><img src="./BASE/TX_schematic.png" width="400">
 *   **接收端 (RX)：** 核心感測元件使用 **BPW-34** 光二極體 (Photodiode)，搭配 OPA 放大電路擷取微弱的光訊號。
-    *   實體電路：![RX Board](./BASE/RX_Board.JPG)
-    *   電路原理圖：![RX Schematic](./BASE/RX_schematic.png)
-    *   光電元件 BPW-34：![BPW-34](./BASE/BPW-34.JPG)
+    *   實體電路：<br><img src="./BASE/RX_Board.JPG" width="250">
+    *   電路原理圖：<br><img src="./BASE/RX_schematic.png" width="400">
+    *   光電元件 BPW-34：<br><img src="./BASE/BPW-34.JPG" width="200">
 
 ## ⏱️ 取樣理論與 ADC 設定 (Sampling Theory & ADC)
 
 為了解決高頻訊號失真問題，本專案對 Arduino 的硬體 ADC 暫存器進行了超頻設定與理論驗證：
-*   **ADC 除頻器設定：** 調整 Prescaler Divisor 以提高轉換速率。 ![Divisor Setting](./Divisor.png)
-*   **取樣時序分析：** 依據 Datasheet 設定準確的轉換時序。 ![ADC Sampling Timing](./sampling.png)
-*   **Nyquist 採樣定理驗證：** 確保系統取樣率 $f_s \ge 2f_{max}$，避免訊號混疊 (Aliasing)。 ![Nyquist Theory](./Nyquist.png)
+
+*   **ADC 除頻器設定：** 調整 Prescaler Divisor 以提高轉換速率。<br><img src="./BASE/Divisor.png" width="450">
+*   **取樣時序分析：** 依據 Datasheet 設定準確的轉換時序。<br><img src="./BASE/sampling.png" width="450">
+*   **Nyquist 採樣定理驗證：** 確保系統取樣率 $f_s \ge 2f_{max}$，避免訊號混疊 (Aliasing)。<br><img src="./BASE/Nyquist.png" width="450">
 
 ## ✨ 核心實作展示 (Demos)
 
 ### 🎵 Demo 1: 類比音訊光傳輸 (Audio Transmission)
-透過光訊號傳遞音訊，並使用 MATLAB 將擷取到的原始訊號進行濾波，利用 `y - mean(y)` 消除硬體產生的直流偏壓 (DC Bias)。
-*   **MATLAB 處理波形：** ![Demo1 Sound Wave](./Demo1_sound.png)
-*   **濾波後音訊結果：** [點此聆聽 VLC_Demo1_Audio_Filtered.wav](./VLC_Demo1_Audio_Filtered.wav)
+透過光訊號傳遞音訊，並使用 MATLAB 將擷取到的原始訊號進行濾波，利用 `y - mean(y)` 消除硬體產生的直流偏壓 (DC Bias)[cite: 1]。
+*   **MATLAB 處理波形：**<br><img src="./BASE/Demo1_sound.png" width="500">
+*   **濾波後音訊結果：** [點此聆聽 VLC_Demo1_Audio_Filtered.wav](./BASE/VLC_Demo1_Audio_Filtered.wav)
 
 ### 🔢 Demo 2: 數位方波解碼 (Digital Square Wave Decoding)
-發送端載入編碼後的數位方波，接收端透過 MATLAB 進行精準的電壓映射 (Voltage Mapping) 與邏輯位準判斷，成功還原數位資訊。
-*   **解碼波形結果：** ![Demo2 Decode](./Demo2_decode.png)
+發送端載入編碼後的數位方波，接收端透過 MATLAB 進行精準的電壓映射 (Voltage Mapping) 與邏輯位準判斷，成功還原數位資訊[cite: 1]。
+*   **解碼波形結果：**<br><img src="./BASE/Demo2_decode.png" width="500">
 
 ### 📈 Demo 3: 模組頻寬量測 (Bandwidth Measurement)
 針對實體焊接的光電收發電路進行極限測試，量測電路的頻率響應與極限頻寬。
-*   **示波器頻寬量測：** ![Demo3 Bandwidth](./Demo3_bandwidth.png)
-*   **TX 頻率響應：** ![TX Frequency Response](./TX_freq_resp.png)
-*   **RX 頻率響應：** ![RX Frequency Response](./RX_freq_resp.png)
-*   **整體效能與數據總結：** ![Measure Result](./Measure_result.png)
+*   **示波器頻寬量測：**<br><img src="./BASE/Demo3_bandwidth.png" width="500">
+*   **TX 頻率響應：**<br><img src="./BASE/TX_freq_resp.png" width="400">
+*   **RX 頻率響應：**<br><img src="./BASE/RX_freq_resp.png" width="400">
+*   **整體效能與數據總結：**<br><img src="./BASE/Measure_result.png" width="400">
 
 ## 🚀 開發工具 (Tech Stack)
 *   **微控制器：** Arduino (C/C++)
