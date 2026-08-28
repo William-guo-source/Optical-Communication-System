@@ -27,7 +27,7 @@
 ### 🎵 Demo 1: 類比音訊光傳輸 (Audio Transmission)
 透過光訊號傳遞音訊訊號，並使用 MATLAB 將擷取到的原始訊號進行濾波，利用 `y - mean(y)` 消除硬體產生的直流偏壓 (DC Bias)。
 *   **MATLAB 處理波形：**<br><img src="./BASE/Demo1_sound.png" width="600">
-*   **MATLAB 透過序列埠接收濾波後音訊結果：** <br><audio src="./BASE/VLC_Demo1_Audio_Filtered.wav" click here to listen received signal></audio>
+*   **MATLAB 透過序列埠接收濾波後音訊結果：** <br><audio src="./BASE/VLC_Demo1_Audio_Filtered.wav" click here to listen received signal>
 
 
 ### 🔢 Demo 2: 數位方波解碼 (Digital Square Wave Decoding)
