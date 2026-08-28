@@ -1,17 +1,17 @@
 # 💡 光通訊收發模組 (Optical Transceiver Module)
 
-本專案實作了一套基於可見光通訊 (Visible Light Communication, VLC) 的硬體收發系統。內容涵蓋類比與數位電路設計 (Schematics)、實體電路板焊接、Arduino ADC 超頻取樣設定，以及運用 MATLAB 進行後端數位訊號處理 (DSP) 與波形重建。
+本專案實作了一套基於可見光通訊 (Visible Light Communication, VLC) 的硬體收發系統。內容涵蓋電路設計、實體電路板焊接、Arduino ADC 超頻取樣設定，以及運用 MATLAB 進行後端數位訊號處理與波形重建。
 
 ## 🔌 硬體電路設計 (Hardware Design)
 
-系統分為發射端 (TX) 與接收端 (RX) 兩部分，採用光電二極體進行光電轉換：
-*   **發射端 (TX)：** 負責將類比/數位訊號載入光源。
-    *   實體電路：![TX Board](./TX_Board.JPG)
-    *   電路原理圖：![TX Schematic](./TX_schematic.png)
-*   **接收端 (RX)：** 核心感測元件使用 **BPW-34** 光電二極體 (Photodiode)，搭配放大電路擷取微弱的光訊號。
-    *   實體電路：![RX Board](./RX_Board.JPG)
-    *   電路原理圖：![RX Schematic](./RX_schematic.png)
-    *   感測元件特寫：![BPW-34](./BPW-34.JPG)
+系統分為發射端 (TX) 與接收端 (RX) 兩部分，採用光二極體進行光能與電能之轉換：
+*   **發射端 (TX)：** 負責將類比音訊/數位編碼訊號載入光源。
+    *   實體電路：![TX Board](./BASE/TX_Board.JPG)
+    *   電路接線圖：![TX Schematic](./BASE/TX_schematic.png)
+*   **接收端 (RX)：** 核心感測元件使用 **BPW-34** 光二極體 (Photodiode)，搭配 OPA 放大電路擷取微弱的光訊號。
+    *   實體電路：![RX Board](./BASE/RX_Board.JPG)
+    *   電路原理圖：![RX Schematic](./BASE/RX_schematic.png)
+    *   光電元件 BPW-34：![BPW-34](./BASE/BPW-34.JPG)
 
 ## ⏱️ 取樣理論與 ADC 設定 (Sampling Theory & ADC)
 
